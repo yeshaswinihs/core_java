@@ -2,11 +2,27 @@ package com.example.helloWorld.restfulwebservices.dto;
 
 import java.util.Date;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
 public class Todos {
+	
+	@Id @GeneratedValue
 	private long id;
+	
+	@Column
 	private String username;
+	
+	@Column
 	private String description;
+	
+	@Column
 	private Date targetDate;
+	
+	@Column
 	private boolean isCompleted;
 
 	public long getId() {
@@ -49,9 +65,22 @@ public class Todos {
 		this.isCompleted = isCompleted;
 	}
 
+	public Todos() {
+		super();
+	}
+
 	public Todos(long id, String username, String description, Date targetDate, boolean isCompleted) {
 		super();
 		this.id = id;
+		this.username = username;
+		this.description = description;
+		this.targetDate = targetDate;
+		this.isCompleted = isCompleted;
+	}
+	
+
+	public Todos(String username, String description, Date targetDate, boolean isCompleted) {
+		super();
 		this.username = username;
 		this.description = description;
 		this.targetDate = targetDate;
@@ -80,5 +109,4 @@ public class Todos {
 		return true;
 	}
 
-	
 }
