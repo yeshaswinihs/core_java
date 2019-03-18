@@ -5,24 +5,30 @@ import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "todo")
 public class Todos {
-	
-	@Id @GeneratedValue
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "TODO_SEQUENCE")
+	@SequenceGenerator(name = "TODO_SEQUENCE", allocationSize = 1)
 	private long id;
-	
+
 	@Column
 	private String username;
-	
+
 	@Column
 	private String description;
-	
-	@Column
+
+	@Column(name = "target_date")
 	private Date targetDate;
-	
-	@Column
+
+	@Column(name = "is_completed")
 	private boolean isCompleted;
 
 	public long getId() {
@@ -77,7 +83,6 @@ public class Todos {
 		this.targetDate = targetDate;
 		this.isCompleted = isCompleted;
 	}
-	
 
 	public Todos(String username, String description, Date targetDate, boolean isCompleted) {
 		super();
