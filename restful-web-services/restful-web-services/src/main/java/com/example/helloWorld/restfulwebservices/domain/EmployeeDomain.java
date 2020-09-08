@@ -13,12 +13,12 @@ import javax.persistence.Table;
 public class EmployeeDomain {
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "EMPLOYEE_SEQUENCE")
-	@SequenceGenerator(name= "EMPLOYEE_SEQUENCE", allocationSize = 1)
+	@SequenceGenerator(name = "EMPLOYEE_SEQUENCE", allocationSize = 1)
 	private long id;
-	
+
 	@Column
-	private String namo;
-	
+	private String name;
+
 	@Column
 	private long age;
 
@@ -30,7 +30,6 @@ public class EmployeeDomain {
 		this.id = id;
 	}
 
-
 	public long getAge() {
 		return age;
 	}
@@ -39,13 +38,17 @@ public class EmployeeDomain {
 		this.age = age;
 	}
 
-	public String getNamo() {
-		return namo;
+	public String getName() {
+		return name;
 	}
 
-	public void setNamo(String namo) {
-		this.namo = namo;
+	public void setName(String name) {
+		this.name = name;
 	}
+
+	
+
+	
 
 //	public String getNamo() {
 //		return namo;
@@ -54,9 +57,5 @@ public class EmployeeDomain {
 //	public void setNamo(String namo) {
 //		this.namo = namo;
 //	}
-	
-	
-	
-	
 
 }

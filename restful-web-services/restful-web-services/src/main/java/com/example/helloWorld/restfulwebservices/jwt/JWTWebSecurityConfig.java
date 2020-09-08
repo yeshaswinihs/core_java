@@ -71,7 +71,9 @@ public class JWTWebSecurityConfig extends WebSecurityConfigurerAdapter {
 				.and().ignoring().antMatchers(HttpMethod.GET, "/" // Other Stuff
 																	// You want
 																	// to Ignore
-				).and().ignoring().antMatchers("/h2-console/**/**");// Should
+				).and().ignoring().antMatchers("/h2-console/**/**")
+				.and().ignoring().antMatchers(HttpMethod.POST, "/submitUser");
+//				.and().ignoring().antMatchers(HttpMethod.OPTIONS, "/submitUser");// Should
 																	// not be in
 																	// Production!
 	}

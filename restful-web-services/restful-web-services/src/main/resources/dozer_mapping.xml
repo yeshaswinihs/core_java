@@ -3,14 +3,11 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://dozer.sourceforge.net
       http://dozer.sourceforge.net/schema/beanmapping.xsd">
-	<mapping>
+	<mapping map-id="EmployeeMap">
 		<class-a>com.example.helloWorld.restfulwebservices.dto.Employee
 		</class-a>
 		<class-b>com.example.helloWorld.restfulwebservices.domain.EmployeeDomain
 		</class-b>
-		<field>
-			<a>name</a>
-			<b>namo</b>
-		</field>
+		
 	</mapping>
 </mappings>

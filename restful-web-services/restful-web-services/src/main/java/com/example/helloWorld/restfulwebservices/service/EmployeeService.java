@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.dozer.DozerBeanMapper;
+import org.dozer.Mapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,15 +19,22 @@ public class EmployeeService {
 	private EmployeeRepository employeeRepository;
 
 	@Autowired
-	DozerBeanMapper beanMapper;
+	Mapper beanMapper;
 
 	public List<Employee> getAllEmployees() {
 		List<Employee> employees = new ArrayList<>();
 		List<EmployeeDomain> employeeDomainList = employeeRepository.findAll();
 		for (EmployeeDomain employeeDomain : employeeDomainList) {
-			employees.add(beanMapper.map(employeeDomain, Employee.class));
+			Employee employee = beanMapper.map(employeeDomain, Employee.class);
+			employees.add(employee);
 		}
 		return employees;
+	}
+
+	public Employee getEmployee(Long id) {
+		EmployeeDomain employeeDomain = employeeRepository.getOne(id);
+		Employee employee = beanMapper.map(employeeDomain, Employee.class);
+		return employee;
 	}
 
 }

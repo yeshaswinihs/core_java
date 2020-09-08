@@ -5,3 +5,6 @@ insert into todo (id,username,description,target_date,is_completed) values(TODO_
 insert into todo (id,username,description,target_date,is_completed) values(TODO_SEQUENCE.nextval,'jagath','Learn Perl',sysdate(),false)
 insert into todo (id,username,description,target_date,is_completed) values(TODO_SEQUENCE.nextval,'jagath','Learn PHP',sysdate(),false)
 insert into todo (id,username,description,target_date,is_completed) values(TODO_SEQUENCE.nextval,'jagath','Learn Drupal',sysdate(),false)
+insert into employee(id, name, age) values (EMPLOYEE_SEQUENCE.nextval,  'Vishwas', 24)
+insert into employee(id, name, age) values (EMPLOYEE_SEQUENCE.nextval,  'Ram', 25)
+insert into employee(id, name, age) values (EMPLOYEE_SEQUENCE.nextval,  'Ajith', 26)
