@@ -1,4 +1,4 @@
-package com.example.helloWorld.restfulwebservices.controller;
+package com.example.helloWorld.restfulwebservices.repository;
 
 import org.hibernate.query.criteria.internal.CriteriaUpdateImpl;
 import org.springframework.data.jpa.repository.JpaRepository;

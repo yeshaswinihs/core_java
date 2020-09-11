@@ -8,6 +8,16 @@
 		</class-a>
 		<class-b>com.example.helloWorld.restfulwebservices.domain.EmployeeDomain
 		</class-b>
-		
+	</mapping>
+	<mapping>
+		<class-a>com.example.helloWorld.restfulwebservices.dto.UserBean
+		</class-a>
+		<class-b>com.example.helloWorld.restfulwebservices.domain.User
+		</class-b>
+		<field
+			custom-converter="com.example.helloWorld.restfulwebservices.customConverters.ListToStringConverter">
+			<a>alternateEmails</a>
+			<b>alternateEmails</b>
+		</field>
 	</mapping>
 </mappings>

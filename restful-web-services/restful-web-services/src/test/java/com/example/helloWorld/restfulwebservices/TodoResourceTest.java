@@ -28,8 +28,8 @@ import org.springframework.test.web.servlet.RequestBuilder;
 import org.springframework.test.web.servlet.ResultActions;
 
 import com.example.helloWorld.restfulwebservices.controller.TodoResource;
-import com.example.helloWorld.restfulwebservices.dto.TodoService;
 import com.example.helloWorld.restfulwebservices.dto.Todos;
+import com.example.helloWorld.restfulwebservices.service.TodoService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 @RunWith(SpringRunner.class)

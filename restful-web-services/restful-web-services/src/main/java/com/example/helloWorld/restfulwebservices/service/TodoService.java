@@ -1,4 +1,4 @@
-package com.example.helloWorld.restfulwebservices.dto;
+package com.example.helloWorld.restfulwebservices.service;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -9,7 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Service;
 
-import com.example.helloWorld.restfulwebservices.controller.TodoRepository;
+import com.example.helloWorld.restfulwebservices.dto.Todos;
+import com.example.helloWorld.restfulwebservices.repository.TodoRepository;
 
 @Service
 public class TodoService {

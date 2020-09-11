@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.helloWorld.restfulwebservices.dto.User;
+import com.example.helloWorld.restfulwebservices.dto.UserBean;
 import com.example.helloWorld.restfulwebservices.service.UserService;
 
 @CrossOrigin(origins = "http://localhost:4200")
@@ -18,7 +18,7 @@ public class UserController {
 	private UserService userService;
 
 	@PostMapping(path = "/submitUser")
-	public Long createUser(@RequestBody User user) {
+	public Long createUser(@RequestBody UserBean user) {
 		return userService.createUser(user);
 	}
 }

@@ -12,9 +12,14 @@ public class Configuration {
 
 	@Bean
 	public Mapper mapper() {
-		//List<String> mappingFiles= Arrays.asList("dozer_mapping.xml", "dozer_mapping2.xml");
+//		List<String> mappingFiles = Arrays.asList("dozer_mapping.xml");
 		DozerBeanMapper mapper = new DozerBeanMapper();
-		//mapper.setMappingFiles(mappingFiles);
+//		mapper.setMappingFiles(mappingFiles);
 		return mapper;
 	}
+
+	// To be Fix
+
+//	getting ClassCastException User cannot be cast to User, for http://localhost:8080/submitUser
+//		when dozer reading custom dozer_mapping.xml mapping, but test class works. So commented the above lines, But default dozer works.
 }

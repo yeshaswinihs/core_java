@@ -1,10 +1,15 @@
 package com.example.helloWorld.restfulwebservices.domain;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 
 @Entity
@@ -16,6 +21,12 @@ public class User {
 	@Column
 	private String name;
 	@Column
+	private String userName;
+	@Column
+	private String password;
+	@Column
+	private String confirmPassword;
+	@Column
 	private String email;
 	@Column
 	private Long phone;
@@ -25,6 +36,14 @@ public class User {
 	private String timePreference;
 	@Column
 	private boolean subscribe;
+//	@Column
+//	private String alternateEmails;
+
+//	 @JoinColumn annotation to configure the name of the column in the users table that maps to the primary key in the address table.
+//	whoever owns the foreign key column gets the @JoinColumn annotation.
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "address_id")
+	private Address address;
 
 	public Long getId() {
 		return id;
@@ -81,5 +100,45 @@ public class User {
 	public void setSubscribe(boolean subscribe) {
 		this.subscribe = subscribe;
 	}
+
+	public Address getAddress() {
+		return address;
+	}
+
+	public void setAddress(Address address) {
+		this.address = address;
+	}
+
+	public String getUserName() {
+		return userName;
+	}
+
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public String getConfirmPassword() {
+		return confirmPassword;
+	}
+
+	public void setConfirmPassword(String confirmPassword) {
+		this.confirmPassword = confirmPassword;
+	}
+
+//	public String getAlternateEmails() {
+//		return alternateEmails;
+//	}
+//
+//	public void setAlternateEmails(String alternateEmails) {
+//		this.alternateEmails = alternateEmails;
+//	}
 
 }

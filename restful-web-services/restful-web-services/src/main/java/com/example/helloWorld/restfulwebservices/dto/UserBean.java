@@ -1,6 +1,8 @@
 package com.example.helloWorld.restfulwebservices.dto;
 
-public class User {
+import java.util.List;
+
+public class UserBean {
 
 	private Long id;
 	private String name;
@@ -9,6 +11,11 @@ public class User {
 	private String topic;
 	private String timePreference;
 	private boolean subscribe;
+	private String userName;
+	private String password;
+	private String confirmPassword;
+	private AddressBean address;
+//	private List<String> alternateEmails;
 
 	public Long getId() {
 		return id;
@@ -65,5 +72,45 @@ public class User {
 	public void setSubscribe(boolean subscribe) {
 		this.subscribe = subscribe;
 	}
+
+	public AddressBean getAddress() {
+		return address;
+	}
+
+	public void setAddress(AddressBean address) {
+		this.address = address;
+	}
+
+	public String getUserName() {
+		return userName;
+	}
+
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public String getConfirmPassword() {
+		return confirmPassword;
+	}
+
+	public void setConfirmPassword(String confirmPassword) {
+		this.confirmPassword = confirmPassword;
+	}
+
+//	public List<String> getAlternateEmails() {
+//		return alternateEmails;
+//	}
+//
+//	public void setAlternateEmails(List<String> alternateEmails) {
+//		this.alternateEmails = alternateEmails;
+//	}
 
 }
